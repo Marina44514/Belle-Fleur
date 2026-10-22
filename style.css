@@ -1,0 +1,702 @@
+/* CONFIGURAÇÃO GLOBAL E VARIÁVEIS DE LUXO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-ivory: #faf8f5;
+    --bg-white: #ffffff;
+    --primary-green: #f17cb3;
+    --primary-hover: #1e2721;
+    --gold-champagne: #c5a880;
+    --gold-light: #e4d5bc;
+    --text-dark: #222222;
+    --text-muted: #6b6b6b;
+    --border-subtle: #eeeae2;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-ivory);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo, .footer-logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gold-champagne);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.container-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.container-header h2 {
+    font-size: 42px;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* CABEÇALHO / GLASSMORPHISM */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background-color: rgba(250, 248, 245, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--primary-green);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 28px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: var(--gold-champagne);
+}
+
+.nav-btn {
+    border: 1px solid var(--primary-green);
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: var(--primary-green) !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-green);
+    color: white !important;
+}
+
+/* SECÇÃO HERO */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('download\ \(2\).jpg') no-repeat center center/cover;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(20,28,23,0.5), rgba(20,28,23,0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.subtitle-top {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.hero-content p {
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: #f1ede6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* BOTÕES DE LUXO */
+.btn {
+    display: inline-block;
+    padding: 15px 38px;
+    background-color: var(--primary-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(45, 59, 50, 0.25);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    display: inline-block;
+    padding: 15px 38px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: var(--text-dark);
+}
+
+/* BARRA DE EXCELÊNCIA */
+.features-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 80px 8%;
+    background-color: var(--bg-white);
+    text-align: center;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.feature-icon {
+    color: var(--gold-champagne);
+    font-size: 22px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.features-bar h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: var(--primary-green);
+}
+
+.features-bar p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* SECÇÃO FILOSOFIA */
+.essence-section {
+    padding: 140px 8%;
+    background-color: var(--bg-white);
+}
+
+.essence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.essence-img-wrapper {
+    position: relative;
+}
+
+.essence-img {
+    height: 520px;
+    background: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80') no-repeat center center/cover;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.essence-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 30px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.essence-badge span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+
+.essence-badge strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.essence-text h2 {
+    font-size: 42px;
+    color: var(--primary-green);
+    margin-bottom: 25px;
+    line-height: 1.25;
+}
+
+.essence-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.essence-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.essence-check {
+    font-size: 14px;
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+/* SECÇÃO DE VARIEDADES DE FLORES (9 TIPOS) */
+.varieties-section {
+    padding: 140px 8%;
+    background-color: var(--bg-ivory);
+}
+
+.varieties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.variety-card {
+    background: var(--bg-white);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+    transition: transform 0.3s;
+}
+
+.variety-card:hover {
+    transform: translateY(-6px);
+}
+.tulipas{
+    height: 150px;
+}
+.variety-img {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Imagens rigorosas para cada uma das 9 espécies */
+.tulipas { background-image: url('Tulips\ .jpg'); }
+.lirios { background-image: url('Orange\ Lily\ Bouquet\ Arrangement.jpg'); }
+.rosas-brancas { background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80'); }
+.orquideas { background-image: url('https://images.unsplash.com/photo-1527061011665-3652c757a4d4?auto=format&fit=crop&w=600&q=80'); }
+.peonias { background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'); }
+.hortensias { background-image: url('♔\ Hortensia\ -\ Hydrangea.jpg'); }
+.girassois { background-image: url('https://images.unsplash.com/photo-1470509037663-253afd7f0f51?auto=format&fit=crop&w=600&q=80'); }
+.cravos { background-image: url('https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=600&q=80'); }
+.eucalipto { background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80'); }
+
+.variety-content {
+    padding: 25px;
+}
+
+.variety-content h3 {
+    font-size: 20px;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.variety-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* COLEÇÃO PRIVADA / CARDS */
+.collection {
+    padding: 140px 8%;
+    background-color: var(--bg-white);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background: var(--bg-ivory);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+}
+
+.card-img {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.flower-1 { background-image: url('ttps://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80'); }
+.flower-2 { background-image: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=700&q=80'); }
+.flower-3 { background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=80'); }
+
+.card-body {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-champagne);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.card-body h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.card-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.card-footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 20px;
+}
+
+.price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--primary-green);
+}
+
+.card-link {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold-champagne);
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.card-link:hover {
+    color: var(--primary-green);
+}
+
+/* SECÇÃO PASSOS / CONFIGURADOR */
+.steps-section {
+    padding: 140px 8%;
+    background-color: var(--bg-ivory);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.step-card {
+    background: var(--bg-white);
+    padding: 50px 40px;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--gold-champagne);
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.step-card h3 {
+    font-size: 22px;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* TESTEMUNHOS */
+.testimonials {
+    padding: 140px 8%;
+    background-color: var(--bg-white);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--bg-ivory);
+    padding: 45px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-subtle);
+    position: relative;
+}
+
+.client-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border: 2px solid var(--gold-champagne);
+}
+
+.avatar-1 { background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80'); }
+.avatar-2 { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80'); }
+
+.stars {
+    color: var(--gold-champagne);
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.client-info strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--primary-green);
+    margin-bottom: 4px;
+}
+
+.client-info span {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* CONTACTO */
+.contact {
+    padding: 140px 8%;
+    background-color: var(--bg-ivory);
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 60px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+}
+
+.contact-box h2 {
+    font-size: 40px;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.contact-method span {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-champagne);
+    margin-bottom: 6px;
+}
+
+.contact-method strong {
+    font-size: 16px;
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+/* RODAPÉ */
+.footer {
+    padding: 80px 8% 50px 8%;
+    background-color: #1a231d;
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: var(--gold-light);
+}
+
+.footer p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #a3aba5;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #d1d8d3;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold-champagne);
+}
+
+.copyright {
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 30px;
+    color: #7c857e !important;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .essence-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .nav {
+        display: none;
+    }
+}
+
+.tulipas{
+    size: 30px;
+}
